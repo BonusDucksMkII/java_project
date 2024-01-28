@@ -13,7 +13,9 @@ public class weatherData {
     public int temperatureHigh;
     public int temperatureLow;
     public String weatherType;
+    /**********************************************************************************/
     /* THIS IS LEFT UNIMPLEMENTED UNTIL I CAN (hopefully) UNDERSTAND THE REST OF THIS */
+    /**********************************************************************************/
     public void getWeatherData() throws Exception {
         /* throws Exception is helping avoid a MalformedURL error (even though the URL works??), not sure what causes it.
          * Create new URL here (can pass a string, might later from user input)

@@ -3,7 +3,7 @@ import java.awt.*;
 
 public class HelloWorldSwing {
     //This method only works as static; not sure why
-    private void createAndShowGUI() {
+    private static void createAndShowGUI() {
         JFrame frame = new JFrame("HelloWorldSwing");
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
@@ -16,7 +16,9 @@ public class HelloWorldSwing {
 
         JTextField textField = new JTextField(20);
         Button requestData = new Button("Get");
-        requestData.addActionListener(this);
+        
+        // "Cannot use in a static context", not sure what to do, but fine. Not using this anyhow.
+        // requestData.addActionListener(this);
 
         frame.pack();
         frame.setVisible(true);
