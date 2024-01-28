@@ -2,20 +2,19 @@ import java.io.BufferedInputStream;
 import java.io.FileOutputStream;
 import java.io.FileReader;
 import java.net.URL;
+import java.util.Map;
+import java.util.Iterator;
 
 import org.json.simple.parser.*;
 import org.json.simple.JSONObject;
-import org.json.simple.JSONValue;
-import org.json.simple.JSONObject;
-
 
 public class weatherData {
-    public int temperatureHigh;
-    public int temperatureLow;
-    public String weatherType;
     /**********************************************************************************/
     /* THIS IS LEFT UNIMPLEMENTED UNTIL I CAN (hopefully) UNDERSTAND THE REST OF THIS */
     /**********************************************************************************/
+    public int temperatureHigh;
+    public int temperatureLow;
+    public String weatherType;
     public void getWeatherData() throws Exception {
         /* throws Exception is helping avoid a MalformedURL error (even though the URL works??), not sure what causes it.
          * Create new URL here (can pass a string, might later from user input)
@@ -57,10 +56,15 @@ public class weatherData {
         fileOut.close();
 
         Object dummyObject = new JSONParser().parse(new FileReader("images/test.json"));
-        JSONValue getValue = new JSONValue();
 
         // Typecasting dummyObject to a JSONObject, guess a JSONParser can't be this?
         JSONObject jo = (JSONObject) dummyObject;
+
+        // Map object helps map values from "properties" (HashMap is unordered like JSON)
+        // I don't understand what's going on here, to be honest. ¯\_(ツ)_/¯ Oh well.
+        
+        // Map properties = ((Map) jo.get("properties"));
+        // Map.Entry dataPair = (Map.Entry)iterator.next;
 
         String sky = jo.get("properties").toString();
         System.out.println(sky);

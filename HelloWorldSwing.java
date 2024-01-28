@@ -14,8 +14,8 @@ public class HelloWorldSwing {
         JLabel icon = new JLabel("Hello World", iconImg, JLabel.LEFT);
         frame.getContentPane().add(icon);
 
-        JTextField textField = new JTextField(20);
-        Button requestData = new Button("Get");
+        // JTextField textField = new JTextField(20);
+        // Button requestData = new Button("Get");
         
         // "Cannot use in a static context", not sure what to do, but fine. Not using this anyhow.
         // requestData.addActionListener(this);
